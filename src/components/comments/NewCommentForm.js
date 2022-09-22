@@ -8,9 +8,7 @@ import LoadingSpinner from '../UI/LoadingSpinner'
 const NewCommentForm = (props) => {
   const commentTextRef = useRef();
   const params = useParams()
-
   const {sendRequest, status, error} = useHttp(addComment)
-
   const {onAddedComment} = props
 
   useEffect(() => {
@@ -21,7 +19,6 @@ const NewCommentForm = (props) => {
 
   const submitFormHandler = (event) => {
     event.preventDefault();
-
     const enteredText = commentTextRef.current.value
     // optional: Could validate here
     sendRequest({ text: enteredText })
